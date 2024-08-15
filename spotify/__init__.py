@@ -1,1 +1,1 @@
-from .auth import check_spotify_access, get_token
+from .auth import check_spotify_access

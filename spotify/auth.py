@@ -1,7 +1,5 @@
 import streamlit as st
-from .utils import post_data
-
-token = None
+from utils import post_data
 
 def retrieve_access_token():
     
@@ -18,10 +16,5 @@ def retrieve_access_token():
     return access_token_response["access_token"]
 
 def check_spotify_access():    
-    global token
-    token = retrieve_access_token()
+    token = st.session_state["token"] = retrieve_access_token()
     st.toast(f"Successfully acquired access token: " + token, icon="✅")
-
-def get_token():
-    global token
-    return token

@@ -1,11 +1,8 @@
 import requests
-
-def get_token():
-    from .auth import get_token
-    return get_token()
+import streamlit as st
 
 def get_data(url):
-    headers = {"Authorization": "Bearer " + get_token()}
+    headers = {"Authorization": "Bearer " + st.session_state["token"]}
     response = requests.get(url, headers = headers)
 
     if response.status_code != 200:

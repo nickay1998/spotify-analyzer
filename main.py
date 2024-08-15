@@ -1,6 +1,6 @@
 import streamlit as st
-from spotify import *
+from spotify import check_spotify_access
 
 if __name__ == '__main__':
     check_spotify_access()
-    st.write(get_token())
+    st.write(st.session_state["token"])
