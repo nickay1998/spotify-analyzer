@@ -16,5 +16,8 @@ def retrieve_access_token():
     return access_token_response["access_token"]
 
 def check_spotify_access():    
+    if "token" in st.session_state:
+        return
+    
     token = st.session_state["token"] = retrieve_access_token()
     st.toast(f"Successfully acquired access token: " + token, icon="✅")
