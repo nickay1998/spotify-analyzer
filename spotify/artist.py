@@ -1,5 +1,6 @@
 import streamlit as st
-from utils import display_card
+from utils import display_cards
+import math
 
 def process_artist_data(data):
     items = data["items"]
@@ -9,7 +10,7 @@ def process_artist_data(data):
         artist = Artist(item)
         artists.append(artist)
 
-        display_card(artist)
+    display_cards(artists)
 
 class Artist:
     def __init__(self, data):

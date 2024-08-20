@@ -1,2 +1,2 @@
 from .requester import get_data, post_data
-from .card import display_card
+from .card import display_cards
