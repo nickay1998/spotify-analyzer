@@ -4,6 +4,9 @@ from streamlit_js_eval import streamlit_js_eval
 
 if __name__ == '__main__':
 
+    # Set title in tab
+    st.set_page_config(page_title="Spotify Analysis", layout="wide")
+
     # Fetch initial window width
     streamlit_js_eval(js_expressions='window.innerWidth', key="window_width")
     
