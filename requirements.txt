@@ -33,6 +33,7 @@ six==1.16.0
 smmap==5.0.1
 streamlit==1.37.1
 streamlit-card==1.0.2
+streamlit-js-eval==0.1.7
 tenacity==8.5.0
 toml==0.10.2
 tornado==6.4.1

@@ -1,7 +1,12 @@
 import streamlit as st
-from spotify import check_spotify_access, search
+from spotify import check_spotify_access, search, process_artist_data
+from streamlit_js_eval import streamlit_js_eval
 
 if __name__ == '__main__':
+
+    # Fetch initial window width
+    streamlit_js_eval(js_expressions='window.innerWidth', key="window_width")
+    
     check_spotify_access()
 
     with st.form(key="Search"):
@@ -9,5 +14,6 @@ if __name__ == '__main__':
         submitted = st.form_submit_button(label="Submit")
 
     if submitted:
-        with st.expander("Search results", True):
-            st.write(search(search_text))
+        search_results = search(search_text)
+        
+        process_artist_data(search_results["artists"])
