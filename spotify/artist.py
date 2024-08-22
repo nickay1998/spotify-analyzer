@@ -1,16 +1,7 @@
 import streamlit as st
-from utils import display_cards
-import math
 
 def process_artist_data(data):
-    items = data["items"]
-    artists = []
-
-    for item in items:
-        artist = Artist(item)
-        artists.append(artist)
-
-    display_cards(artists)
+    return [Artist(item) for item in data["items"]]
 
 class Artist:
     def __init__(self, data):
