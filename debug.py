@@ -7,7 +7,7 @@ if __name__ == "__main__":
 
     flag_options = {
         "server.port": 8501,
-        "global.developmentMode": False
+        "global.developmentMode": False,
     }
 
     bootstrap.load_config_options(flag_options=flag_options)

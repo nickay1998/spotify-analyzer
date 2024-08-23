@@ -17,6 +17,7 @@ def display_card(item):
             "div": { "padding": "1px" }
         },
         key=item.id,
+        on_click=lambda: display_details(item)
     )
 
 def display_cards(items):
@@ -32,3 +33,9 @@ def display_cards(items):
         for i, result in enumerate(group):
             with cols[i]:
                 display_card(result)
+
+def display_details(item):
+    st.session_state["search_type"] = "artists"
+    st.session_state["display_object"] = item
+    st.session_state["details"] = True
+    st.switch_page("pages/details.py")
